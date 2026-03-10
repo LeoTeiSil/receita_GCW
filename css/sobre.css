@@ -1,0 +1,125 @@
+:root {
+    --vermelho: #FF4D4D;
+    --rosa-fundo: #FFC1CC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--rosa-fundo);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Mantém as manchas no lugar sem criar scroll */
+}
+
+/* NAVBAR (Sincronizada com o seu CSS bom) */
+.header {
+    background-color: var(--vermelho);
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.scallop-svg {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* SEÇÃO SOBRE NÓS */
+.about-section {
+    position: relative;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-container {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    max-width: 850px;
+}
+
+.text-card {
+    background-color: var(--vermelho);
+    padding: 60px 50px;
+    border-radius: 50px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.text-card p {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 800; /* Texto grosso como na imagem */
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* MANCHAS DE FUNDO */
+.bg-blob-top {
+    position: absolute;
+    top: 5%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    background-color: var(--vermelho);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+}
+
+.bg-blob-bottom {
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 600px;
+    height: 600px;
+    background-color: var(--vermelho);
+    /* Forma orgânica igual à mancha da hero */
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+    z-index: 1;
+}
+
+/* IMAGEM FLUTUANTE */
+.floating-ice-cream {
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 30%;
+    max-width: 450px;
+    z-index: 25;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+/* AJUSTE MOBILE */
+@media (max-width: 768px) {
+    .text-card { padding: 30px; border-radius: 30px; }
+    .text-card p { font-size: 1.1rem; }
+    .floating-ice-cream { width: 50%; }
+    .navbar a { font-size: 1.2rem; }
+}

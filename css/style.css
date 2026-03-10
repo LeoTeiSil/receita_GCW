@@ -1,0 +1,122 @@
+:root {
+    --vermelho: #FF4D4D;
+    --rosa-fundo: #FFC1CC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--rosa-fundo);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.header {
+    background-color: var(--vermelho);
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.scallop-svg {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8%;
+    min-height: 90vh;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6.5rem;
+    color: var(--vermelho);
+    line-height: 0.9;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.contact p {
+    color: var(--vermelho);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.contact strong {
+    color: var(--vermelho);
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+/* LADO DIREITO - FORMAS */
+.hero-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.blob-shape {
+    position: absolute;
+    width: 120%;
+    height: 110%;
+    background-color: var(--vermelho);
+    /* Cria o efeito da mancha da imagem */
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+    right: -150px;
+    top: -50px;
+    z-index: 1;
+}
+
+.ice-cream-img {
+    position: relative;
+    z-index: 2;
+    width: 110%;
+    max-width: 700px;
+    filter: drop-shadow(10px 10px 30px rgba(0,0,0,0.1));
+}
+
+/* AJUSTE RESPONSIVO */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 150px;
+    }
+    .title { font-size: 4rem; }
+    .blob-shape { width: 100%; right: 0; top: 0; border-radius: 50% 50% 0 0; }
+    .hero-right { margin-top: 50px; }
+}
